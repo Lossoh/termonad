@@ -37,7 +37,10 @@ let
       overrideCabal termonad (oldAttrs: {
         # For some reason the doctests fail when running with nix.
         # https://github.com/cdepillabout/termonad/issues/15
-        doCheck = false;
+        #doCheck = false;
+        checkPhase = ''
+          ./dist/build/doctests/doctests
+        '';
       });
 
   haskellPackagesOverlay = self: super: with super.haskell.lib; {

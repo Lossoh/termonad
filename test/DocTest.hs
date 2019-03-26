@@ -9,4 +9,4 @@ main = do
   doctest args
   where
     args :: [String]
-    args = flags ++ pkgs ++ module_sources
+    args = flags ++ pkgs ++ module_sources ++ ["-v"]
